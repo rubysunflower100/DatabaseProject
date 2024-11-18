@@ -1,10 +1,9 @@
 ﻿namespace DatabaseProject.Models
 {
-    public class Item
+    public class Branch
     {
         public int Id { get; set; }
         public string Name { get; set; }
 
-        public double Price { get; set; }
     }
 }
