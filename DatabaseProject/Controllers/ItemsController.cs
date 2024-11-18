@@ -22,7 +22,7 @@ namespace DatabaseProject.Controllers
             return View();
         }
         [HttpPost]
-        public async Task<IActionResult> Create([Bind("Id","Name","Price")] Item item)
+        public async Task<IActionResult> Create([Bind("Id, Name, Author, Available")] Item item)
         {
             if(ModelState.IsValid)
             {
@@ -38,8 +38,9 @@ namespace DatabaseProject.Controllers
             return View(item);
         }
         [HttpPost]
-        public async Task<IActionResult> Edit(int id, [Bind("Id, Name, Price")] Item item)
-        {
+        public async Task<IActionResult> Edit(int id, [Bind("Id, Name, Author, Available")] Item item)
+
+		{
             if (ModelState.IsValid) {
                 _context.Update(item);
                 await _context.SaveChangesAsync();
